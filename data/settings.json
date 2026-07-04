@@ -1,0 +1,24 @@
+{
+  "name": "DevPulse AI",
+  "version": "1.0.0",
+  "description": "Intelligent Project Documentation & Progress Automation engine that generates meaningful project updates including progress reports, changelogs, roadmaps, metrics, and development summaries.",
+  "repository": "https://github.com/user/devpulse-ai",
+  "author": "DevPulse AI Team",
+  "license": "MIT",
+  "createdAt": "2025-01-15",
+  "enabledGenerators": [
+    "progress",
+    "roadmap",
+    "changelog",
+    "metrics",
+    "todo",
+    "release"
+  ],
+  "tags": [
+    "documentation",
+    "automation",
+    "github-actions",
+    "node.js",
+    "open-source"
+  ]
+}

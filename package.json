@@ -1,0 +1,37 @@
+{
+  "name": "devpulse-ai",
+  "version": "1.0.0",
+  "description": "Intelligent Project Documentation & Progress Automation engine that generates meaningful project updates including progress reports, changelogs, roadmaps, metrics, and development summaries on a configurable schedule.",
+  "type": "module",
+  "main": "app/main.js",
+  "scripts": {
+    "start": "node scripts/start.js",
+    "generate": "node scripts/generate.js",
+    "update": "node scripts/update.js",
+    "release": "node scripts/release.js",
+    "clean": "node scripts/clean.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "node --check app/*.js services/*.js generators/*.js utils/*.js scripts/*.js"
+  },
+  "keywords": [
+    "documentation",
+    "automation",
+    "github-actions",
+    "changelog",
+    "roadmap",
+    "metrics",
+    "markdown",
+    "ci-cd",
+    "developer-tools",
+    "project-management"
+  ],
+  "author": "GitHub Contributions Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.1"
+  }
+}

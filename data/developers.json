@@ -1,0 +1,37 @@
+{
+  "developers": [
+    {
+      "name": "Lead Developer",
+      "role": "Project Lead & Architecture",
+      "contributions": [
+        "Core architecture design",
+        "Generator framework",
+        "Configuration system",
+        "CI/CD pipeline"
+      ],
+      "since": "2025-01-15"
+    },
+    {
+      "name": "Documentation Engineer",
+      "role": "Technical Writing & Templates",
+      "contributions": [
+        "Template design",
+        "README authoring",
+        "API documentation",
+        "Contributing guidelines"
+      ],
+      "since": "2025-02-01"
+    },
+    {
+      "name": "Automation Engineer",
+      "role": "CI/CD & DevOps",
+      "contributions": [
+        "GitHub Actions workflows",
+        "Scheduler implementation",
+        "Git automation",
+        "Release pipeline"
+      ],
+      "since": "2025-03-01"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "versions": [
+    {
+      "version": "1.0.0",
+      "date": "2025-06-01",
+      "title": "Initial Release",
+      "changes": {
+        "Added": [
+          "Core documentation generation engine",
+          "Progress report generator with sprint tracking",
+          "Roadmap generator with milestone visualization",
+          "Changelog generator with semantic versioning",
+          "Metrics dashboard generator",
+          "TODO list generator with priority levels",
+          "Release notes generator",
+          "GitHub Actions scheduler workflow",
+          "Template-based markdown rendering",
+          "Configuration system with environment overrides"
+        ],
+        "Changed": [],
+        "Fixed": [],
+        "Improved": [],
+        "Documentation": [
+          "Project README with architecture overview",
+          "Installation and setup guide",
+          "Architecture documentation"
+        ]
+      }
+    },
+    {
+      "version": "0.9.0",
+      "date": "2025-05-15",
+      "title": "Release Candidate",
+      "changes": {
+        "Added": [
+          "Commit service with auto-push support",
+          "GitHub environment detection",
+          "Report generation service (daily/weekly/monthly)",
+          "Log rotation system"
+        ],
+        "Changed": [
+          "Migrated from CommonJS to ES Modules",
+          "Restructured generator interface for consistency"
+        ],
+        "Fixed": [
+          "Date formatting edge case with UTC midnight",
+          "File write race condition in concurrent generators"
+        ],
+        "Improved": [
+          "Change detection using SHA-256 content hashing",
+          "Error messages now include stack traces in debug mode"
+        ],
+        "Documentation": [
+          "Updated workflow documentation",
+          "Added API reference for utilities"
+        ]
+      }
+    },
+    {
+      "version": "0.8.0",
+      "date": "2025-04-20",
+      "title": "Automation Pipeline",
+      "changes": {
+        "Added": [
+          "GitHub Actions scheduler with 6-hour cron",
+          "Lint workflow for CI",
+          "Release packaging workflow",
+          "Git user configuration for CI commits"
+        ],
+        "Changed": [
+          "Scheduler now checks for meaningful changes before generating"
+        ],
+        "Fixed": [
+          "Git push authentication in GitHub Actions environment"
+        ],
+        "Improved": [
+          "Workflow caching for faster CI runs",
+          "Reduced unnecessary file writes by 40%"
+        ],
+        "Documentation": []
+      }
+    },
+    {
+      "version": "0.5.0",
+      "date": "2025-03-01",
+      "title": "Generator Framework",
+      "changes": {
+        "Added": [
+          "Base generator interface",
+          "Progress generator",
+          "Roadmap generator",
+          "Changelog generator",
+          "Markdown formatting utilities",
+          "Template placeholder system"
+        ],
+        "Changed": [],
+        "Fixed": [],
+        "Improved": [
+          "Modular architecture with clean separation of concerns"
+        ],
+        "Documentation": [
+          "Initial project documentation"
+        ]
+      }
+    },
+    {
+      "version": "0.1.0",
+      "date": "2025-01-15",
+      "title": "Project Bootstrap",
+      "changes": {
+        "Added": [
+          "Project structure with clean architecture",
+          "Configuration system",
+          "Logger utility with file output",
+          "File I/O utilities",
+          "Date formatting helpers",
+          "Validation module"
+        ],
+        "Changed": [],
+        "Fixed": [],
+        "Improved": [],
+        "Documentation": [
+          "Initial README"
+        ]
+      }
+    }
+  ]
+}

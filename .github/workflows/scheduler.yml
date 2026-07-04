@@ -1,0 +1,70 @@
+name: 📝 Documentation Scheduler
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force documentation generation'
+        required: false
+        default: true
+        type: boolean
+      generators:
+        description: 'Comma-separated list of generators to run (leave empty for all)'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  generate-docs:
+    name: Generate Documentation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: ⚙️ Configure Git
+        run: |
+          git config user.name "GitHub Contributions Bot"
+          git config user.email "bot@github-contributions.dev"
+
+      - name: 📝 Generate Documentation
+        run: |
+          ARGS="--force"
+          if [ -n "${{ inputs.generators }}" ]; then
+            ARGS="$ARGS --only ${{ inputs.generators }}"
+          fi
+          node scripts/start.js $ARGS
+        env:
+          NODE_ENV: production
+          AUTO_COMMIT: 'true'
+          AUTO_PUSH: 'false'
+          CI: 'true'
+
+      - name: 📤 Commit and Push Changes
+        run: |
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git add -A
+          git commit -m "docs: automated documentation update [skip ci]" || exit 0
+          git push origin main
