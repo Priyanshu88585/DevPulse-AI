@@ -43,8 +43,8 @@ jobs:
 
       - name: ⚙️ Configure Git
         run: |
-          git config user.name "GitHub Contributions Bot"
-          git config user.email "bot@github-contributions.dev"
+          git config user.name "DevPulse AI Bot"
+          git config user.email "bot@devpulse-ai.dev"
 
       - name: 📝 Generate Documentation
         run: |
