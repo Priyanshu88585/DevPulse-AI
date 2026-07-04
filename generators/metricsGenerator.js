@@ -6,8 +6,7 @@
 import { join } from 'path';
 import { PATHS, OUTPUT_FILES } from '../app/constants.js';
 import { writeMarkdown } from '../utils/file.js';
-import { formatReadable, formatTimestamp } from '../utils/date.js';
-import { heading, table, horizontalRule, bold, progressBar, list, badge } from '../utils/formatter.js';
+import { heading, table, horizontalRule, bold, progressBar, badge } from '../utils/formatter.js';
 import { documentHeader, documentFooter, composeDocument } from '../services/markdown.service.js';
 import { computeMetrics } from '../services/metrics.service.js';
 import logger from '../utils/logger.js';
@@ -27,7 +26,6 @@ const metricsGenerator = {
     // ── Header ──────────────────────────────────────────────────────────
     const header = documentHeader('📊 Project Metrics', {
       description: 'Automated project statistics and health indicators',
-      lastUpdated: formatReadable(),
       version: m.currentVersion,
     });
 
@@ -47,7 +45,6 @@ const metricsGenerator = {
         ['Metric', 'Value', 'Status'],
         [
           ['Documentation Pages', String(m.documentationPages), '📝'],
-          ['Last Updated', m.lastUpdated.slice(0, 19).replace('T', ' '), '🕐'],
           ['Total Milestones', String(m.totalMilestones), '🏗️'],
           ['Completed Milestones', String(m.completedMilestones), '✅'],
           ['In-Progress Milestones', String(m.inProgressMilestones), '🔄'],
@@ -114,8 +111,6 @@ const metricsGenerator = {
       horizontalRule(),
       repoSection,
       recentSection,
-      horizontalRule(),
-      `${bold('Generated:')} ${formatTimestamp()}`,
       documentFooter()
     );
 

@@ -6,8 +6,7 @@
 import { join } from 'path';
 import { PATHS, OUTPUT_FILES } from '../app/constants.js';
 import { writeMarkdown } from '../utils/file.js';
-import { formatReadable } from '../utils/date.js';
-import { heading, table, list, horizontalRule, bold, progressBar, quote } from '../utils/formatter.js';
+import { heading, table, list, horizontalRule, progressBar, quote } from '../utils/formatter.js';
 import { documentHeader, documentFooter, composeDocument } from '../services/markdown.service.js';
 import { getMilestonesByStatus, getOverallProgress } from '../services/timeline.service.js';
 import logger from '../utils/logger.js';
@@ -28,7 +27,6 @@ const roadmapGenerator = {
     // ── Header ──────────────────────────────────────────────────────────
     const header = documentHeader('🗺️ Project Roadmap', {
       description: 'Strategic development roadmap and milestone tracking',
-      lastUpdated: formatReadable(),
     });
 
     // ── Overall Progress ────────────────────────────────────────────────
@@ -55,7 +53,7 @@ const roadmapGenerator = {
       ...completed.map(m => [
         `### ${m.title}`,
         '',
-        `> Completed: ${formatReadable(new Date(m.completedDate))} | Target: ${formatReadable(new Date(m.targetDate))}`,
+        `> Completed: ${new Date(m.completedDate).toISOString().slice(0, 10)} | Target: ${new Date(m.targetDate).toISOString().slice(0, 10)}`,
         '',
         m.description,
         '',
@@ -76,7 +74,7 @@ const roadmapGenerator = {
         table(
           ['Detail', 'Value'],
           [
-            ['Target Date', formatReadable(new Date(m.targetDate))],
+            ['Target Date', new Date(m.targetDate).toISOString().slice(0, 10)],
             ['Status', '🔄 In Progress'],
           ]
         ),
@@ -95,7 +93,7 @@ const roadmapGenerator = {
       ...planned.map(m => [
         `### ${m.title}`,
         '',
-        `> Target: ${formatReadable(new Date(m.targetDate))}`,
+        `> Target: ${new Date(m.targetDate).toISOString().slice(0, 10)}`,
         '',
         m.description,
         '',

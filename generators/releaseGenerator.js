@@ -6,7 +6,6 @@
 import { join } from 'path';
 import { PATHS, OUTPUT_FILES, CHANGELOG_CATEGORIES } from '../app/constants.js';
 import { writeMarkdown } from '../utils/file.js';
-import { formatReadable } from '../utils/date.js';
 import { heading, list, horizontalRule, bold, table, badge } from '../utils/formatter.js';
 import { documentHeader, documentFooter, composeDocument } from '../services/markdown.service.js';
 import { loadVersions } from '../services/changelog.service.js';
@@ -27,7 +26,6 @@ const releaseGenerator = {
     // ── Header ──────────────────────────────────────────────────────────
     const header = documentHeader('🚀 Releases', {
       description: 'Release history and highlights for each version',
-      lastUpdated: formatReadable(),
     });
 
     // ── Release Count ───────────────────────────────────────────────────
@@ -38,8 +36,6 @@ const releaseGenerator = {
 
     // ── Release Sections ────────────────────────────────────────────────
     const releaseSections = versions.map(version => {
-      const dateStr = formatReadable(new Date(version.date));
-
       // Count changes per category
       const changeCounts = CHANGELOG_CATEGORIES
         .map(cat => {
@@ -59,7 +55,7 @@ const releaseGenerator = {
       const section = [
         heading(`v${version.version} — ${version.title || 'Release'}`, 2),
         '',
-        `📅 ${bold('Released:')} ${dateStr}`,
+        `📅 ${bold('Released:')} ${new Date(version.date).toISOString().slice(0, 10)}`,
         '',
         changeCounts.length > 0
           ? `📦 ${bold('Changes:')} ${changeCounts.join(' · ')}`

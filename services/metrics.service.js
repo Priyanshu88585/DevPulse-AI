@@ -6,7 +6,6 @@
 import { join } from 'path';
 import { PATHS, DATA_FILES } from '../app/constants.js';
 import { readJSON, listFiles, countFilesRecursive } from '../utils/file.js';
-import { formatTimestamp } from '../utils/date.js';
 import logger from '../utils/logger.js';
 
 /**
@@ -54,7 +53,6 @@ export function computeMetrics() {
 
   const metrics = {
     documentationPages,
-    lastUpdated: formatTimestamp(),
     totalMilestones: milestones.length,
     completedMilestones,
     inProgressMilestones,
@@ -98,7 +96,6 @@ export function getMetricsForTemplate() {
   const m = computeMetrics();
   return {
     documentationPages: String(m.documentationPages),
-    lastUpdated: m.lastUpdated,
     totalMilestones: String(m.totalMilestones),
     completedMilestones: String(m.completedMilestones),
     inProgressMilestones: String(m.inProgressMilestones),

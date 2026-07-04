@@ -81,7 +81,6 @@ export function documentHeader(title, meta = {}) {
   }
 
   const metaParts = [];
-  if (meta.lastUpdated) metaParts.push(`**Last Updated:** ${meta.lastUpdated}`);
   if (meta.version) metaParts.push(`**Version:** ${meta.version}`);
 
   if (metaParts.length > 0) {

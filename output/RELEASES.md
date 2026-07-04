@@ -2,8 +2,6 @@
 
 > Release history and highlights for each version
 
-**Last Updated:** July 4, 2026
-
 ---
 
 
@@ -12,7 +10,7 @@
 ---
 
 ## v1.0.0 — Initial Release
-📅 **Released:** June 1, 2025
+📅 **Released:** 2025-06-01
 📦 **Changes:** 10 Added · 3 Documentation
 ### Highlights
 - Core documentation generation engine
@@ -23,7 +21,7 @@
 ---
 
 ## v0.9.0 — Release Candidate
-📅 **Released:** May 15, 2025
+📅 **Released:** 2025-05-15
 📦 **Changes:** 4 Added · 2 Changed · 2 Fixed · 2 Improved · 2 Documentation
 ### Highlights
 - Commit service with auto-push support
@@ -35,7 +33,7 @@
 ---
 
 ## v0.8.0 — Automation Pipeline
-📅 **Released:** April 20, 2025
+📅 **Released:** 2025-04-20
 📦 **Changes:** 4 Added · 1 Changed · 1 Fixed · 2 Improved
 ### Highlights
 - GitHub Actions scheduler with 6-hour cron
@@ -47,7 +45,7 @@
 ---
 
 ## v0.5.0 — Generator Framework
-📅 **Released:** March 1, 2025
+📅 **Released:** 2025-03-01
 📦 **Changes:** 6 Added · 1 Improved · 1 Documentation
 ### Highlights
 - Base generator interface
@@ -58,7 +56,7 @@
 ---
 
 ## v0.1.0 — Project Bootstrap
-📅 **Released:** January 15, 2025
+📅 **Released:** 2025-01-15
 📦 **Changes:** 6 Added · 1 Documentation
 ### Highlights
 - Project structure with clean architecture

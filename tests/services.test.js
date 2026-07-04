@@ -46,10 +46,9 @@ describe('markdown.service', () => {
   });
 
   it('documentHeader creates proper header', () => {
-    const header = documentHeader('Title', { description: 'Desc', lastUpdated: '2025-01-01' });
+    const header = documentHeader('Title', { description: 'Desc' });
     expect(header).toContain('# Title');
     expect(header).toContain('Desc');
-    expect(header).toContain('2025-01-01');
   });
 
   it('documentFooter includes project name', () => {

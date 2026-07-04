@@ -6,7 +6,6 @@
 import { join } from 'path';
 import { PATHS, OUTPUT_FILES } from '../app/constants.js';
 import { writeMarkdown } from '../utils/file.js';
-import { formatReadable } from '../utils/date.js';
 import { heading, horizontalRule } from '../utils/formatter.js';
 import { documentHeader, documentFooter, composeDocument } from '../services/markdown.service.js';
 import { buildFullChangelog, getChangelogStats } from '../services/changelog.service.js';
@@ -28,7 +27,6 @@ const changelogGenerator = {
     // ── Header ──────────────────────────────────────────────────────────
     const header = documentHeader('📋 Changelog', {
       description: 'All notable changes to this project are documented in this file. This project adheres to [Semantic Versioning](https://semver.org/).',
-      lastUpdated: formatReadable(),
       version: stats.latestVersion,
     });
 

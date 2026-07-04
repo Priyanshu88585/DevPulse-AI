@@ -2,7 +2,7 @@
 
 > All notable changes to this project are documented in this file. This project adheres to [Semantic Versioning](https://semver.org/).
 
-**Last Updated:** July 4, 2026 | **Version:** 1.0.0
+**Version:** 1.0.0
 
 ---
 

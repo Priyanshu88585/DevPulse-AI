@@ -6,11 +6,9 @@
 import { join } from 'path';
 import { PATHS, DATA_FILES, OUTPUT_FILES } from '../app/constants.js';
 import { readJSON, writeMarkdown } from '../utils/file.js';
-import { formatTimestamp, formatReadable, formatDate } from '../utils/date.js';
 import { heading, list, table, horizontalRule, quote, bold, progressBar, taskList } from '../utils/formatter.js';
 import { documentHeader, documentFooter, composeDocument } from '../services/markdown.service.js';
 import { getSprintInfo } from '../services/timeline.service.js';
-import { getSprintSummary, getStatusDescription } from './randomTextGenerator.js';
 import logger from '../utils/logger.js';
 
 const progressGenerator = {
@@ -28,8 +26,7 @@ const progressGenerator = {
 
     // ── Header ──────────────────────────────────────────────────────────
     const header = documentHeader('📊 Development Progress', {
-      description: getStatusDescription(),
-      lastUpdated: formatReadable(),
+      description: 'Current sprint progress, priorities, and blockers',
       version: 'Sprint ' + sprint.number,
     });
 
@@ -47,7 +44,7 @@ const progressGenerator = {
         ]
       ),
       '',
-      quote(getSprintSummary()),
+      quote('Active development sprint focused on current project priorities.'),
     ].join('\n');
 
     // ── Sprint Goals ────────────────────────────────────────────────────
@@ -55,9 +52,9 @@ const progressGenerator = {
     const goalsSection = goals.length > 0 ? [
       heading('🎯 Sprint Goals', 2),
       '',
-      taskList(goals.map((goal, i) => ({
+      taskList(goals.map((goal) => ({
         text: goal,
-        done: i < Math.floor(goals.length * 0.6), // Mark ~60% as done
+        done: false, // Default to incomplete for pure strings
       }))),
     ].join('\n') : '';
 
@@ -109,8 +106,6 @@ const progressGenerator = {
       horizontalRule(),
       prioritiesSection,
       blockersSection,
-      horizontalRule(),
-      `${bold('Last Updated:')} ${formatTimestamp()}`,
       documentFooter()
     );
 

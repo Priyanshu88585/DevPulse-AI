@@ -6,7 +6,6 @@
 import { join } from 'path';
 import { PATHS, OUTPUT_FILES } from '../app/constants.js';
 import { writeMarkdown } from '../utils/file.js';
-import { formatReadable, formatTimestamp } from '../utils/date.js';
 import { heading, list, horizontalRule, bold, taskList, table } from '../utils/formatter.js';
 import { documentHeader, documentFooter, composeDocument } from '../services/markdown.service.js';
 import { getTasksByPriority, getTaskStats } from '../services/task.service.js';
@@ -28,7 +27,6 @@ const todoGenerator = {
     // ── Header ──────────────────────────────────────────────────────────
     const header = documentHeader('📝 Task Tracker', {
       description: 'Project tasks organized by priority level',
-      lastUpdated: formatReadable(),
     });
 
     // ── Summary ─────────────────────────────────────────────────────────
@@ -107,8 +105,6 @@ const todoGenerator = {
       horizontalRule(),
       completedSection,
       futureSection,
-      horizontalRule(),
-      `${bold('Last Updated:')} ${formatTimestamp()}`,
       documentFooter()
     );
 
