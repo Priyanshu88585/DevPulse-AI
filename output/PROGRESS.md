@@ -13,7 +13,7 @@
 | :--- | :--- |
 | Sprint | Sprint 14 |
 | Period | 2026-07-01 → 2026-07-14 |
-| Days Remaining | 10 days |
+| Days Remaining | 9 days |
 | Status | 🟢 Active |
 
 > Active development sprint focused on current project priorities.
