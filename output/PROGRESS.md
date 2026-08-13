@@ -2,7 +2,7 @@
 
 > Current sprint progress, priorities, and blockers
 
-**Version:** Sprint 16
+**Version:** Sprint 17
 
 ---
 
@@ -11,9 +11,9 @@
 
 | Detail | Value |
 | :--- | :--- |
-| Sprint | Sprint 16 |
-| Period | 2026-07-30 → 2026-08-12 |
-| Days Remaining | 0 days |
+| Sprint | Sprint 17 |
+| Period | 2026-08-13 → 2026-08-26 |
+| Days Remaining | 13 days |
 | Status | 🟢 Active |
 
 > Active development sprint focused on current project priorities.
